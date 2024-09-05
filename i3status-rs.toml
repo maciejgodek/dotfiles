@@ -1,0 +1,70 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "nord-dark"
+
+[icons]
+icons = "awesome4"
+
+[[block]]
+block = "net"
+format = "$icon {$signal_strength|Wired}"
+
+[[block]]
+block = "cpu"
+
+[[block]]
+block = "temperature"
+chip = "coretemp-isa-*"
+interval = 10
+format = "$icon CPU $max"
+good = 40
+idle = 50
+info = 70
+warning = 80
+
+[[block]]
+block = "temperature"
+chip = "*-pci-*"
+inputs = ["junction"]
+interval = 10
+format = "$icon GPU $max"
+good = 55
+idle = 60
+info = 70
+warning = 90
+
+[[block]]
+block = "memory"
+format = "$icon $mem_free "
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+alert_unit = "GB"
+interval = 20
+warning = 5.0
+alert = 2.0
+format = "$icon / $available.eng(w:2) "
+
+[[block]]
+block = "disk_space"
+path = "/home"
+info_type = "available"
+alert_unit = "GB"
+interval = 20
+warning = 50.0
+alert = 25.0
+format = "$icon /home $available.eng(w:2)"
+
+[[block]]
+block = "sound"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 5
+format = "$timestamp.datetime(f:'%a %d/%m %R')"
