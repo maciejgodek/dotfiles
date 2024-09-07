@@ -59,4 +59,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 
 export PATH=/home/maciek/.cargo/bin:${PATH}
 
+alias hx=helix
+
 eval "$(starship init zsh)"

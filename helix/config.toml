@@ -3,6 +3,7 @@ theme = "nord"
 [editor]
 line-number = "relative"
 mouse = true
+bufferline = "multiple"
 
 [editor.cursor-shape]
 insert = "bar"
