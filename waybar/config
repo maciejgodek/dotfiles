@@ -2,7 +2,7 @@
     "spacing": 4,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "backlight", "network", "temperature", "cpu", "memory", "battery", "clock", "tray"],
+    "modules-right": ["pulseaudio", "backlight", "network", "temperature#gpu", "temperature#cpu", "cpu", "memory", "battery", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -15,7 +15,7 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "  {:%Y-%m-%d   %H:%M}"
+        "format": "  {:%Y-%m-%d %H:%M}"
     },
     "cpu": {
         "format": "  {usage}%",
@@ -43,10 +43,15 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-    "temperature": {
+    "temperature#gpu": {
+        "hwmon-path": "/sys/class/hwmon/hwmon8/temp2_input",
+        "critical-threshold": 90,
+        "format": "GPU {temperatureC}°C",
+    },
+    "temperature#cpu": {
+        "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
         "critical-threshold": 80,
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["🌡", "⚠"]
+        "format": "CPU {temperatureC}°C",
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -58,11 +63,11 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon}  {volume}%      {format_source}",
+        "format": "{icon} {volume}% {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "  {icon}  {format_source}",
-        "format-muted": "   {format_source}",
-        "format-source": "  {volume}%",
+        "format-bluetooth-muted": "  {icon} {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -73,7 +78,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
     }
 
 }

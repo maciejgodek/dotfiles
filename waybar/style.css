@@ -15,13 +15,13 @@ window {
 #mode {
   color: @nord0;
   background-color: @nord13;
-  margin-left: 8px;
+  margin-right: 8px;
   border-radius: 3px;
   padding: 0px 6px;
 }
 
 #workspaces button {
-  margin-left: 8px;
+  margin-right: 8px;
   background-color: @nord3;
   padding: 0px 4px;
   color: @nord6;
@@ -49,13 +49,16 @@ window {
 #language,
 #battery,
 #temperature,
-#gpu_temperature,
 #idle_inhibitor,
 #clock,
 #tray {
   background-color: @nord2;
   padding: 0px 8px;
   color: @nord6;
+}
+
+#temperature.critical {
+  background-color: @nord11
 }
 
 #language,
