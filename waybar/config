@@ -2,7 +2,7 @@
     "spacing": 4,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "backlight", "network", "temperature#gpu", "temperature#cpu", "cpu", "memory", "battery", "clock", "tray"],
+    "modules-right": ["pulseaudio", "backlight", "network", "temperature#cpu", "cpu", "memory", "battery", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -43,15 +43,8 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-    "temperature#gpu": {
-        "hwmon-path-abs": "/sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0/0000:02:00.0/0000:03:00.0/hwmon",
-        "input-filename": "temp2_input",
-        "critical-threshold": 90,
-        "format": "GPU {temperatureC}°C",
-    },
     "temperature#cpu": {
-        "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon/",
-        "input-filename": "temp1_input",
+        "thermal-zone": 0,
         "critical-threshold": 80,
         "format": "CPU {temperatureC}°C",
     },
