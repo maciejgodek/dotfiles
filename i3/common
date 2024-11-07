@@ -26,7 +26,6 @@ bindsym $mod+c exec firefox
 
 bindsym $mod+Shift+q kill
 
-bindsym $mod+Shift+z exec loginctl lock-session
 
 # change focus
 bindsym $mod+h focus left

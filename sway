@@ -4,6 +4,12 @@ include /etc/sway/config.d/*
 output "*" bg ~/.walls/norge.jpg fill
 
 output "AOC U34G2G4R3 0x0000005C" mode 3440x1440@144Hz 
+output "BOE 0x0BC9 Unknown" scale 1.333 color_profile icc /home/maciek/.config/colors.icm
+input "type:touchpad" {
+	dwt enabled
+	tap enabled
+	middle_emulation enabled
+}
 input "*" xkb_options "caps:swapescape"
 input "36125:40349:splitkb.com_Elora" xkb_options ""
 input "*" xkb_layout "pl"
@@ -12,6 +18,7 @@ exec swayidle -w \
 	timeout 180 'swaylock -f -k -c 000000' \
 	timeout 240 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 	before-sleep 'swaylock -f -k -c 000000'
+bindsym $mod+Shift+z exec swaylock -f -k -c 000000
 	
 bindsym $mod+d exec --no-startup-id wofi --show drun
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your X session.' -B 'Yes, exit sway' 'swaymsg exit'"
