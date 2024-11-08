@@ -13,6 +13,11 @@ input "type:touchpad" {
 input "*" xkb_options "caps:swapescape"
 input "36125:40349:splitkb.com_Elora" xkb_options ""
 input "*" xkb_layout "pl"
+bindgesture swipe:3:right workspace next
+bindgesture swipe:3:left workspace prev
+
+bindsym XF86MonBrightnessDown exec "brightnessctl set 5%-"
+bindsym XF86MonBrightnessUp exec "brightnessctl set +5%"
 
 exec swayidle -w \
 	timeout 180 'swaylock -f -k -c 000000' \
