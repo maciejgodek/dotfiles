@@ -2,9 +2,8 @@ include ./common
 include /etc/sway/config.d/*
 
 output "*" bg ~/.walls/norge.jpg fill
+output "BOE 0x0BC9 Unknown" color_profile icc /home/maciek/.config/colors.icm
 
-output "AOC U34G2G4R3 0x0000005C" mode 3440x1440@144Hz 
-output "BOE 0x0BC9 Unknown" scale 1.333 color_profile icc /home/maciek/.config/colors.icm adaptive_sync on
 input "type:touchpad" {
 	dwt enabled
 	tap enabled
