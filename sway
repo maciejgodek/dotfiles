@@ -4,7 +4,7 @@ include /etc/sway/config.d/*
 output "*" bg ~/.walls/norge.jpg fill
 
 output "AOC U34G2G4R3 0x0000005C" mode 3440x1440@144Hz 
-output "BOE 0x0BC9 Unknown" scale 1.333 color_profile icc /home/maciek/.config/colors.icm
+output "BOE 0x0BC9 Unknown" scale 1.333 color_profile icc /home/maciek/.config/colors.icm adaptive_sync on
 input "type:touchpad" {
 	dwt enabled
 	tap enabled
@@ -25,7 +25,7 @@ exec swayidle -w \
 	before-sleep 'swaylock -f -k -c 000000'
 bindsym $mod+Shift+z exec swaylock -f -k -c 000000
 	
-bindsym $mod+d exec --no-startup-id wofi --show drun
+bindsym $mod+d exec --no-startup-id "wofi --show=drun,run"
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your X session.' -B 'Yes, exit sway' 'swaymsg exit'"
 
 for_window [class="battle.net.exe"] floating enable
