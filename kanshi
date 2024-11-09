@@ -1,0 +1,10 @@
+profile home-office {
+	output "AOC U34G2G4R3 0x0000005C" mode 3440x1440@144Hz adaptive_sync on position 0,0
+	output "BOE 0x0BC9 Unknown" mode 2560x1600@165Hz scale 1.333 adaptive_sync on position 3440,0
+	exec "/usr/bin/notify-send -u low -i computer 'Switched to home office monitor profile'"
+}
+
+profile laptop {
+	output "BOE 0x0BC9 Unknown" mode 2560x1600@165Hz scale 1.333 adaptive_sync on
+	exec "/usr/bin/notify-send -u low -i computer 'Laptop only'"
+}
