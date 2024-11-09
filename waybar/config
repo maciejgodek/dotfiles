@@ -2,7 +2,7 @@
     "spacing": 4,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "backlight", "network", "temperature#cpu", "cpu", "memory", "battery", "clock", "tray"],
+    "modules-right": ["pulseaudio", "backlight", "idle_inhibitor", "network", "temperature#cpu", "cpu", "memory", "battery", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -74,6 +74,14 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": "true"
     }
 
 }
