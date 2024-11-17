@@ -34,3 +34,5 @@ for_window [class="steam_app_1086940"] floating enable
 bar {
 	swaybar_command waybar
 }
+
+exec_always systemctl start --user sway.target
