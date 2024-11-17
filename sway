@@ -11,7 +11,7 @@ input "type:touchpad" {
 	middle_emulation enabled
 }
 input "*" xkb_options "caps:swapescape"
-input "36125:40349:splitkb.com_Elora" xkb_options ""
+input "36125:40349:splitkb.com_Elora_Keyboard" xkb_options ""
 input "*" xkb_layout "pl"
 bindgesture swipe:3:right workspace next
 bindgesture swipe:3:left workspace prev
