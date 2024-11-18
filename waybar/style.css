@@ -44,6 +44,7 @@ window {
 #pulseaudio,
 #network,
 #cpu,
+#custom-power_draw,
 #memory,
 #backlight,
 #language,
@@ -76,7 +77,8 @@ window {
   border-bottom-left-radius: 3px;
 }
 
-#pulseaudio.muted {
+#pulseaudio.muted,
+#idle_inhibitor.activated {
   background-color: @nord13;
   color: @nord3;
 }
@@ -90,7 +92,11 @@ window {
 #cpu,
 #memory,
 #battery {
-  background-color: @nord3;
+  background-color: @nord2;
+}
+
+#custom-power_draw {
+  background-color: @nord2;
 }
 
 #tray {

@@ -2,7 +2,7 @@
     "spacing": 4,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "backlight", "idle_inhibitor", "network", "temperature#cpu", "cpu", "memory", "battery", "clock", "tray"],
+    "modules-right": ["pulseaudio", "backlight", "idle_inhibitor", "network", "group/perf", "group/power", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -43,10 +43,34 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
+    "custom/power_draw": {
+        "format": "{}",
+        "interval": 10,
+        "exec": "cat /sys/class/power_supply/BAT1/current_now /sys/class/power_supply/BAT1/voltage_now | xargs | awk '{printf \"%5.2f W\", $1*$2/1e12}'"
+    },
+    "group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "battery",
+            "custom/power_draw"
+        ]
+    },
     "temperature#cpu": {
         "thermal-zone": 0,
         "critical-threshold": 80,
         "format": "CPU {temperatureC}°C",
+    },
+    "group/perf": {
+        "orientation": "inherit",
+        "drawer": {},
+        "modules": [
+            "temperature#cpu",
+            "cpu",
+            "memory"
+        ]
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
