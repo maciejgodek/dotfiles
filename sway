@@ -30,6 +30,7 @@ bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut.
 
 for_window [class="battle.net.exe"] floating enable
 for_window [class="heroesofthestorm_x64.exe"] floating enable
+for_window [class="steam_app_1086940"] floating enable
 
 bar {
 	swaybar_command waybar
