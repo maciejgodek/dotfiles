@@ -4,7 +4,13 @@ profile home-office {
 	exec /usr/bin/notify-send -u low -i /usr/share/icons/Nordzy-dark/devices/scalable/computer.svg 'Switched to home office monitor profile'
 }
 
+profile durham_home_office {
+	output "Dell Inc. DELL S3422DWG H1YWXW3" mode 3440x1440@144Hz position 0,0
+	output "BOE 0x0BC9 Unknown" disable
+	exec /usr/bin/notify-send -u low -i /usr/share/icons/Nordzy-dark/devices/scalable/computer.svg 'Switched to home office monitor profile'
+}
+
 profile laptop {
-	output "BOE 0x0BC9 Unknown" mode 2560x1600@165Hz scale 1.333 adaptive_sync on
+	output "BOE 0x0BC9 Unknown" enable mode 2560x1600@165Hz scale 1.333 adaptive_sync on
 	exec /usr/bin/notify-send -u low -i /usr/share/icons/Nordzy-dark/devices/scalable/computer-laptop.svg 'Laptop only'
 }
