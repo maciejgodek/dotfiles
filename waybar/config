@@ -7,15 +7,15 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "sway/window": {
-        "max-length": 50
+        "max-length": 40
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 6
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "  {:%Y-%m-%d %H:%M}"
+        "format": " {:%Y-%m-%d %H:%M}"
     },
     "cpu": {
         "format": "  {usage}%",
@@ -26,8 +26,8 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{icon}  {percent}%",
-        "format-icons": ["", ""]
+        "format": "{icon} {percent}%",
+        "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
     },
     "battery": {
         "states": {
