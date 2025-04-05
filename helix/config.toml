@@ -12,3 +12,6 @@ select = "underline"
 
 [editor.lsp]
 display-inlay-hints = true
+
+[keys.normal]
+C-r = [":reflow"]

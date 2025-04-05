@@ -11,6 +11,7 @@ input "type:touchpad" {
 }
 input "*" xkb_options "caps:swapescape"
 input "36125:40349:splitkb.com_Elora_Keyboard" xkb_options ""
+input "36125:40349:splitkb.com_Kyria_rev1" xkb_options ""
 input "*" xkb_layout "pl"
 bindgesture swipe:3:right workspace next
 bindgesture swipe:3:left workspace prev
@@ -28,11 +29,14 @@ bindsym $mod+d exec --no-startup-id "wofi --show=drun,run"
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your X session.' -B 'Yes, exit sway' 'swaymsg exit'"
 
 for_window [class="battle.net.exe"] floating enable
+for_window [title="Battle.net"] floating enable
 for_window [class="heroesofthestorm_x64.exe"] floating enable
+for_window [title="Heroes of the Storm"] floating enable
 for_window [class="steam_app_1086940"] floating enable
 
 bar {
 	swaybar_command waybar
 }
 
+exec_always systemctl stop --user kanshi.service
 exec_always systemctl start --user sway.target
