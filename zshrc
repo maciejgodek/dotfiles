@@ -62,3 +62,7 @@ export PATH=/home/maciek/.cargo/bin:${PATH}
 alias hx=helix
 
 eval "$(starship init zsh)"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/maciek/.local/bin:$PATH"

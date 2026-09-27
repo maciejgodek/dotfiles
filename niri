@@ -18,7 +18,7 @@ input {
             // For example:
             layout "pl"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
-            // options "caps:swapescape"
+            options "caps:swapescape"
         }
     }
 
@@ -240,6 +240,12 @@ layout {
         // right 64
         // top 64
         // bottom 64
+    }
+
+    tab-indicator {
+        active-color "#81a1c1"
+        width 6
+        gap 0
     }
 }
 
